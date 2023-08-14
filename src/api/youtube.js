@@ -29,7 +29,7 @@ export default class Youtube {
         },
       })
       .then((res) =>
-        res.data.items.map((item) => ({ ...item, id: item.id.videosId }))
+        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
       );
   }
 
