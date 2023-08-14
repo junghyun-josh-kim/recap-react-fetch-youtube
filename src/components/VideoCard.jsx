@@ -1,10 +1,16 @@
 import React from 'react';
 import { format } from 'timeago.js';
+import { useNavigate } from 'react-router-dom';
 
 export default function VideoCard({ video }) {
   const { title, thumbnails, channelTitle, publshiedAt } = video.snippet;
+  const navigate = useNavigate();
   return (
-    <li>
+    <li
+      onClick={() => {
+        navigate(`videos/watch/${video.id}`, { state: { video } });
+      }}
+    >
       <img
         className='w-full'
         src={thumbnails.medium.url}
